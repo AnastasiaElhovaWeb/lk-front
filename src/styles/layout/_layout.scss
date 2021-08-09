@@ -1,0 +1,796 @@
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat-Regular.eot');
+  src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+  url("../fonts/Montserrat-Regular.otf") format("opentype"),
+  url('../fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg'),
+  url("../fonts/Montserrat-Regular.ttf") format("truetype"),
+  url('../fonts/Montserrat-Regular.woff') format('woff'),
+  url('../fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('../fonts/Montserrat-Medium.eot');
+  src: url('../fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+  url("../fonts/Montserrat-Medium.otf") format("opentype"),
+  url('../fonts/Montserrat-Medium.svg#Montserrat-Medium') format('svg'),
+  url('../fonts/Montserrat-Medium.ttf') format('truetype'),
+  url('../fonts/Montserrat-Medium.woff') format('woff'),
+  url('../fonts/Montserrat-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url('../fonts/Montserrat-SemiBold.eot');
+  src: url('../fonts/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
+  url("../fonts/Montserrat-Bold.otf") format("opentype"),
+  url('../fonts/Montserrat-SemiBold.svg#Montserrat-SemiBold') format('svg'),
+  url('../fonts/Montserrat-SemiBold.ttf') format('truetype'),
+  url('../fonts/Montserrat-SemiBold.woff') format('woff'),
+  url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat-Bold.eot');
+  src: url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+  url("../fonts/Montserrat-Bold.otf") format("opentype"),
+  url('../fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg'),
+  url('../fonts/Montserrat-Bold.ttf') format('truetype'),
+  url('../fonts/Montserrat-Bold.woff') format('woff'),
+  url('../fonts/Montserrat-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+* {
+  font-family: $font-family, sans-serif;
+  box-sizing: border-box;
+  color: $gray;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: $font-size;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $background-light;
+}
+
+a {
+  color: $blue;
+  &:hover {
+    color: $blue-hover;
+    text-decoration: none;
+  }
+}
+
+.container-main {
+  @media (max-width: $desktop-wide) {
+    padding: $indent-middle 20px $indent-large;
+  }
+  @media (max-width: $mobile) {
+    padding: $indent-normal 0 $indent-large;
+  }
+}
+
+
+.container-centered {
+
+  .content {
+
+    .panel {
+      max-width: 420px;
+      width: 100%;
+      margin: auto;
+    }
+
+    @media (max-width: $desktop-wide) {
+      min-height: calc(100vh - 75px);
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 !important;
+
+    .content {
+      min-height: 100vh;
+      margin: 0;
+      background-color: $white;
+    }
+  }
+
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 75px);
+  align-items: flex-start;
+  margin: 30px 2.79% 45px;
+
+  &.content-with-sidebar {
+    width: 69.42%;
+
+    @media (max-width: $desktop-wide) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $desktop-wide) {
+    margin: 0;
+    min-height: initial;
+  }
+
+  @media (max-width: $mobile) {
+    margin: 0 20px;
+  }
+
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  background-color: $white;
+  padding: $indent-middle $indent-large $indent-large;
+
+
+  @media (max-width: $desktop-wide) {
+    position: static;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 20px $indent-large;
+  }
+
+}
+
+h1, .header-1 {
+  font-family: Montserrat-Bold;
+  font-size: 2.14rem;
+  line-height: 1.27;
+  letter-spacing: -0.015em;
+  color: $gray-dark;
+
+  @media (max-width: $mobile) {
+    font-family: Montserrat-Regular;
+    font-weight: 600;
+    font-size: 1.71rem;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+  }
+}
+
+h2, .header-2 {
+  font-family: Montserrat-Regular;
+  font-weight: 600;
+  font-size: 1.71rem;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+  color: $gray-dark;
+
+  @media (max-width: $mobile) {
+    font-size: 1.43rem;
+    line-height: 1.20;
+    letter-spacing: -0.005em;
+  }
+}
+
+h3, .header-3 {
+  font-family: Montserrat-Regular;
+  font-weight: 600;
+  font-size: 1.43rem;
+  line-height: 1.20;
+  letter-spacing: -0.005em;
+  color: $gray-dark;
+
+  @media (max-width: $mobile) {
+    font-size: 1.14rem;
+    line-height: 1.50;
+  }
+}
+
+h4, .header-4 {
+  font-family: Montserrat-Regular;
+  font-weight: 600;
+  font-size: 1.14rem;
+  line-height: 1.50;
+  letter-spacing: -0.005em;
+  color: $gray-dark;
+}
+
+p, .paragraph {
+  font-family: Montserrat-Regular, serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.71;
+}
+
+
+b, .bold {
+  font-weight: 600;
+}
+
+label, .label {
+  font-family: Montserrat-Regular, serif;
+  font-weight: 500;
+  font-size: 0.86rem;
+  line-height: 1.50;
+  letter-spacing: 0.015em;
+  color: $gray-light;
+  margin: 0;
+}
+
+
+.btn {
+  font-family: Montserrat-Regular;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 1.04rem 1.8rem;
+  font-size: 1rem;
+
+  & ~ & {
+    margin-left: 1rem;
+
+    @media (max-width: $mobile) {
+      margin-left: 0;
+      margin-top: 0.71rem;
+    }
+  }
+
+  &-sm {
+    font-size: 0.86rem;
+    padding: 0.57rem 1.14rem;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &-primary, &-primary.disabled, &-primary:disabled {
+    background-color: $blue;
+    border-color: $blue;
+    color: $white;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &-primary {
+    &:hover {
+      background-color: $blue-hover;
+      border-color: $blue-hover;
+    }
+  }
+
+  &-primary.disabled, &-primary:disabled {
+    pointer-events: none;
+    &:hover {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+    }
+  }
+
+
+  &-secondary, &-secondary.disabled, &-secondary:disabled {
+    background-color: $background-light;
+    border-color: $background-light;
+    color: $gray;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &-secondary {
+    &:hover {
+      background-color: $blue-light;
+      border-color: $blue-light;
+      color: $gray;
+    }
+  }
+
+  &-secondary.disabled, &-secondary:disabled {
+    pointer-events: none;
+    &:hover {
+      background-color: $background-light;
+      border-color: $background-light;
+      color: $gray;
+    }
+  }
+
+  &-outline-primary, &-outline-primary.disabled, &-outline-primary:disabled {
+    border-color: $blue;
+    color: $blue;
+    border-width: 2px;
+    padding: 0.49rem 1.14rem;
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &-outline-primary {
+    &:hover {
+      background-color: $blue-hover;
+      border-color: $blue-hover;
+    }
+  }
+
+  &-outline-primary.disabled, &-outline-primary:disabled {
+    pointer-events: none;
+    &:hover {
+      border-color: $blue;
+      color: $blue;
+    }
+  }
+
+  &-outline-secondary, &-outline-secondary.disabled, &-outline-secondary:disabled {
+    border-color: #C0CDDB;
+    color: $gray;
+    border-width: 2px;
+    padding: 0.49rem 1.14rem;
+
+    &:hover {
+      background-color: #C0CDDB;
+      border-color: #C0CDDB;
+      color: $white;
+    }
+
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &-outline-secondary {
+    &:hover {
+      background-color: #C0CDDB;
+      border-color: #C0CDDB;
+      color: $white;
+    }
+  }
+
+  &-outline-secondary.disabled, &-outline-secondary:disabled {
+    pointer-events: none;
+    &:hover {
+      border-color: #C0CDDB;
+      color: $gray;
+    }
+  }
+
+
+
+
+}
+
+.btn.btn-arrow, .btn.btn-tel, .btn.btn-plus, .btn.btn-cross {
+  position: relative;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    left: -0.7rem;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url("../image/sprite.svg#arrow-btn") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn.btn-mobile-search, .btn.btn-mobile-sort {
+  padding: 1.79rem;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -9px;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.btn.btn-submit-input {
+  padding: 0 1.79rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $gray-light;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -9px;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    background: url("../image/sprite.svg#arrow-btn") center no-repeat;
+    background-size: cover;
+  }
+}
+
+
+.btn-secondary.btn-arrow {
+  &:before {
+    background: url("../image/sprite.svg#arrow-btn-dark") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn.btn-tel {
+  &:before {
+    background: url("../image/sprite.svg#tel") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn-secondary.btn-tel {
+  &:before {
+    background: url("../image/sprite.svg#tel-dark") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn.btn-plus {
+  &:before {
+    background: url("../image/sprite.svg#plus-big") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn-secondary.btn-plus {
+  &:before {
+    background: url("../image/sprite.svg#plus-big-dark") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn.btn-cross {
+  &:before {
+    background: url("../image/sprite.svg#cross") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn-secondary.btn-cross {
+  &:before {
+    background: url("../image/sprite.svg#cross-dark") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn.btn-mobile-sort {
+  &:before {
+    background: url("../image/sprite.svg#sort") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn-secondary.btn-mobile-sort {
+  &:before {
+    background: url("../image/sprite.svg#sort-dark") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn.btn-mobile-search {
+  &:before {
+    background: url("../image/sprite.svg#search") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn-secondary.btn-mobile-search {
+  &:before {
+    background: url("../image/sprite.svg#search-dark") center no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (max-width: $mobile) {
+  .btn.btn-mobile-plus {
+    padding: 1.79rem;
+    font-size: 0;
+    width: initial;
+    &:before {
+      position: absolute;
+      left: 50%;
+      margin-left: -9px;
+      top: 50%;
+      margin-top: -10px;
+    }
+  }
+}
+
+
+
+.colorbg-black {
+  background-color: $black;
+}
+
+.colorbg-white {
+  background-color: $white;
+}
+
+.colorbg-gray-dark {
+  background-color: $gray-dark;
+}
+
+.colorbg-gray {
+  background-color: $gray;
+}
+
+.colorbg-gray-light {
+  background-color: $gray-light;
+}
+
+.colorbg-blue-light {
+  background-color: $blue-light;
+}
+
+.colorbg-background-light {
+  background-color: $background-light;
+}
+
+.colorbg-background-light-extra {
+  background-color: $background-light-extra;
+}
+
+.colorbg-red {
+  background-color: $red;
+}
+
+.colorbg-blue {
+  background-color: $blue;
+}
+
+
+.color-black {
+  color: $black;
+}
+
+.color-white {
+  color: $white;
+}
+
+.color-gray-dark {
+  color: $gray-dark;
+}
+
+.color-gray {
+  color: $gray;
+}
+
+.color-gray-light {
+  color: $gray-light;
+}
+
+.color-blue-light {
+  color: $blue-light;
+}
+
+.color-background-light {
+  color: $background-light;
+}
+
+.color-background-light-extra {
+  color: $background-light-extra;
+}
+
+.color-red {
+  color: $red;
+}
+
+.color-blue {
+  color: $blue;
+}
+
+
+
+
+// Таблицы
+.table-simple {
+
+  border-collapse: unset;
+  border-spacing: 0;
+
+  th {
+    padding: 0.5rem 1.14rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: $gray-light;
+    border-left: 1px solid #E1E9F0;
+    border-bottom: 1px solid #E1E9F0;
+    border-top: 1px solid #E1E9F0;
+    background-color: $background-light;
+  }
+
+  td {
+    padding: 0.64rem 1.14rem;
+    border-left: 1px solid #E1E9F0;
+    border-bottom: 1px solid #E1E9F0;
+    background-color: $white;
+  }
+
+  tr td:last-child {
+    border-right: 1px solid #E1E9F0;
+  }
+
+  tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+  }
+
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+  }
+
+  tr:first-child td,
+  tr:first-child th {
+    border-top: 1px solid #E1E9F0;
+  }
+
+  tr:first-child td:first-child,
+  tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+  }
+
+  tr:first-child td:last-child,
+  tr:first-child th:last-child {
+    border-top-right-radius: 6px;
+  }
+
+  thead + tbody tr:first-child td,
+  thead + tbody tr:first-child td:first-child,
+  thead + tbody tr:first-child td:last-child {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.table-simple--wide {
+    width: 100% !important;
+  }
+}
+
+.panel-content .table-simple {
+  @media (max-width: $desktop-wide) {
+    width: 100%;
+  }
+}
+
+[data-table-type] {
+
+  th {
+    display: none;
+  }
+
+  thead+tbody tr:first-child td {
+    border-top: 1px solid #E1E9F0 !important;
+  }
+
+  thead+tbody tr:first-child td:first-child {
+    border-top-left-radius: 6px !important;
+  }
+
+  thead+tbody tr:first-child td:last-child {
+    border-top-right-radius: 6px !important;
+  }
+
+}
+
+
+
+// Modals
+.modal {
+
+  .btn {
+    min-width: 185px;
+  }
+
+  &-header, &-footer {
+    border: none;
+  }
+
+  &-content {
+    border-radius: 6px;
+  }
+
+  &-body {
+    padding-left: $indent-large-extra;
+    padding-right: $indent-large-extra;
+    @media (max-width: $mobile) {
+      padding-left: $indent-middle;
+      padding-right: $indent-middle;
+    }
+  }
+
+  &-header {
+    padding-top: $indent-large;
+    padding-left: $indent-large-extra;
+    padding-right: $indent-large-extra;
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    @media (max-width: $mobile) {
+      padding-left: $indent-middle;
+      padding-right: $indent-middle;
+    }
+  }
+
+  &-footer {
+    padding-bottom: $indent-large;
+    padding-left: $indent-large-extra;
+    padding-right: $indent-large-extra;
+    @media (max-width: $mobile) {
+      padding-left: $indent-middle;
+      padding-right: $indent-middle;
+    }
+  }
+
+  &-sidebar {
+
+    padding-right: 0 !important;
+
+    .modal-dialog {
+      width: 50%;
+      max-width: 100%;
+      margin: 0 0 0 auto;
+
+      @media (max-width: $desktop-large) {
+        width: 75%;
+      }
+
+      @media (max-width: $desktop-tight) {
+        width: 100%;
+      }
+    }
+
+    .modal-body {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+
+}

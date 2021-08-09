@@ -1,0 +1,87 @@
+extends blocks/_layout
+block title
+    title Личный кабинет
+block content
+
+    .content
+        .d-flex.flex-wrap.w-100.mb-3
+            .col-12.col-sm-6.p-0.order-2.order-sm-1
+                a.btn.btn-outline-secondary.btn-sm(href="#") Назад
+            .col-12.col-sm-6.p-0.order-1.order-sm-2.mb-3.mb-sm-0.d-flex.justify-content-end.align-items-center
+                p.paragraph.mr-3.mb-0 Sambarov Georgy Editor
+                form.ajax-form(novalidate)
+                    input(type='hidden' name='action' value='callback')
+                    button.btn.btn-outline-secondary.btn-sm Выйти
+
+        form.ajax-form.w-100(novalidate)
+            input(type='hidden' name='action' value='callback')
+            .panel.panel-header
+                .row.mb-1.mb-sm-3.mb-xl-2
+                    .col-12
+                        h1.d-inline Новая заявка
+                .row
+                    .col-12.col-sm-6.mb-3
+                        .form-group.required
+                            label.mb-2 Вид заявки
+                            select.form-control.form-control-select(data-step='1' required='required' name='type')
+                                option(value='') Все
+                                option(value="type-1") Авария
+                                option(value="type-2") Муж на час
+                            .invalid-feedback
+                    .col-12.col-sm-6.mb-3
+                        .form-group
+                            label.mb-2 Категория
+                            select.form-control.form-control-select(data-step='2' name='category')
+                                option(value="" data-parent='') Все
+                                option(value="Обвал крыши" data-parent='type-1' disabled) Обвал крыши
+                                option(value="Перегорела лампочка" data-parent='type-1' disabled) Перегорела лампочка
+                                option(value="Течет кран" data-parent='type-1' disabled) Течет кран
+                                option(value="Трещина в стене" data-parent='type-1' disabled) Трещина в стене
+                                option(value="Замена лампы" data-parent='type-2' disabled) Замена лампы
+                                option(value="Установка кондиционера" data-parent='type-2' disabled) Установка кондиционера
+                            .invalid-feedback
+                    .col-12.mb-3
+                        .form-group.required
+                            label.mb-2 Описание
+                            textarea.form-control(rows=5 required='required' placeholder="Опишите проблему" name='problem')
+                            .invalid-feedback
+                    .col-12.mb-3.mb-sm-0
+                        .form-group
+                            label.mb-2 Фотографии
+                            input#file.form-control.form-control-file(type='file' name='file' multiple)
+                            label(for='file') Выбрать файл
+
+            .panel.panel-content
+                h3.mb-3 Контактная информация
+                .row
+                    .col-12.col-sm-6.mb-3
+                        .form-group.required
+                            label.mb-2 Имя
+                            input.form-control.disabled(value='Виктория' name='name')
+                            .invalid-feedback
+                    .col-12.col-sm-6.mb-3
+                        .form-group
+                            label.mb-2 Фамилия
+                            input.form-control.disabled(name='surname')
+                            .invalid-feedback
+                .row
+                    .col-12.col-sm-6.mb-3
+                        .form-group
+                            label.mb-2 Отчество
+                            input.form-control.disabled(name='fathername')
+                            .invalid-feedback
+                    .col-12.col-sm-6.mb-3
+                        .form-group.required
+                            label.mb-2 Телефон
+                            input.form-control.disabled(value='+7 (962) 721-55-66' name='phone')
+                            .invalid-feedback
+                .row
+                    .col-12.mb-3
+                        .form-group
+                            label.mb-2 Примечание
+                            textarea.form-control(rows=5 name='note')
+                            .invalid-feedback
+                .row
+                    .col-12.mb-3
+                        .form-group
+                            button.btn.btn-primary Отправить

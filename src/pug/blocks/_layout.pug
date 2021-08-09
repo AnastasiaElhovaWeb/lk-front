@@ -1,0 +1,18 @@
+include ../mixins/mixins
+doctype html
+html(lang='ru')
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="shortcut icon" href="assets/image/favicon.ico")
+        block title
+        link(rel='stylesheet' href="assets/css/core.css")
+        link(rel='stylesheet' href="assets/css/main.css")
+    body
+        block variables
+        .container-fluid.d-flex.p-xl-0.flex-wrap.container-main
+            block content
+            include _modals
+        script(src="assets/js/vendor.js")
+        script(src="assets/js/templates.js")
+        script(src="assets/js/custom.js")

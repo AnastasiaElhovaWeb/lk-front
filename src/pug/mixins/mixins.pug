@@ -1,0 +1,53 @@
+mixin svg(name,mod)
+    - mod = mod || ''
+    svg(class=mod)
+        use(xlink:href="assets/image/sprite.svg#" + name)
+
+
+mixin menu-lk(active_link)
+    .nav.nav-pills(role='tablist')
+
+        if (active_link === 'lk-nachisleniya.html')
+            a.nav-link.active(href='lk-nachisleniya.html')
+                +svg('info', 'nav-link-icon')
+                | Начисления
+        else
+            a.nav-link(href='lk-nachisleniya.html')
+                +svg('info', 'nav-link-icon')
+                | Начисления
+
+        if (active_link === 'lk-platezhi.html')
+            a.nav-link.active(href='lk-platezhi.html')
+                +svg('info', 'nav-link-icon')
+                | Платежи
+        else
+            a.nav-link(href='lk-platezhi.html')
+                +svg('info', 'nav-link-icon')
+                | Платежи
+
+        if (active_link === 'lk-schetchiki.html')
+            a.nav-link.active(href='lk-schetchiki.html')
+                +svg('plus', 'nav-link-icon')
+                | Показания счетчиков
+        else
+            a.nav-link(href='lk-schetchiki.html')
+                +svg('plus', 'nav-link-icon')
+                | Показания счетчиков
+
+        if (active_link === 'lk-zayavki.html')
+            a.nav-link.active(href='lk-zayavki.html')
+                +svg('clock', 'nav-link-icon')
+                | Заявки
+        else
+            a.nav-link(href='lk-zayavki.html')
+                +svg('clock', 'nav-link-icon')
+                | Заявки
+
+        if (active_link === 'lk-cards.html')
+            a.nav-link.active(href='lk-cards.html')
+                +svg('info', 'nav-link-icon')
+                | Карты и автоплатежи
+        else
+            a.nav-link(href='lk-cards.html')
+                +svg('info', 'nav-link-icon')
+                | Карты и автоплатежи

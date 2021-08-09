@@ -1,0 +1,22 @@
+extends _layout
+block variables
+block title
+    title Личный кабинет
+block content
+
+    .content
+        .d-flex.flex-wrap.w-100.mb-3
+            .col-12.col-sm-6.p-0.order-2.order-sm-1
+                a.btn.btn-outline-secondary.btn-sm(href="#") Назад
+            .col-12.col-sm-6.p-0.order-1.order-sm-2.mb-3.mb-sm-0.d-flex.justify-content-end.align-items-center
+                p.paragraph.mr-3.mb-0 Sambarov Georgy Editor
+                form.ajax-form(novalidate)
+                    input(type='hidden' name='action' value='callback')
+                    button.btn.btn-outline-secondary.btn-sm Выйти
+
+        .panel.panel-header
+            block panel-header
+
+        .panel.panel-content
+            block panel-content
+

@@ -1,0 +1,45 @@
+// COLORS
+$black: #000000;
+$white: #ffffff;
+
+$gray-dark: #001D40;
+$gray: #15365E;
+$gray-light: #7488A1;
+
+$blue-light: #D8E0E8;
+$background-light: #EBF0F5;
+$background-light-extra: #F5F7FA;
+
+$red: #E61947;
+$blue: #0B53A6;
+$blue-hover: #1B64B8;
+
+$font-size: 14px;
+
+
+//MEDIA-SIZES
+$mobile: 575px;
+$tablet: 767px;
+$desktop-tight: 991px;
+$desktop-wide: 1199px;
+$desktop-large: 1399px;
+$desktop-xlarge: 1499px;
+
+//MARGINS AND PADDINGS
+$indent-small: 8px;
+$indent-normal: 16px;
+$indent-middle: 24px;
+$indent-large: 32px;
+$indent-large-extra: 40px;
+$indent-gigant-extra: 56px;
+
+//FONTS
+$font-family: Montserrat-Regular;
+$font-family-medium: Montserrat-Medium;
+$font-family-bold: Montserrat-Bold;
+$font-family-semibold: Montserrat-SemiBold;
+
+// Transition  property
+$gl-trs-duration: .3s;
+$gl-trs-function: ease;
+$gl-transition: all 0.2s ease-in-out;

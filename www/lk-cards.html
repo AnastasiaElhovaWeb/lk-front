@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/image/favicon.ico">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex p-xl-0 flex-wrap container-main">
+      <div class="content">
+        <div class="d-flex flex-wrap w-100 mb-3">
+          <div class="col-12 col-sm-6 p-0 order-2 order-sm-1"><a class="btn btn-outline-secondary btn-sm" href="#">Назад</a></div>
+          <div class="col-12 col-sm-6 p-0 order-1 order-sm-2 mb-3 mb-sm-0 d-flex justify-content-end align-items-center">
+            <p class="paragraph mr-3 mb-0">Sambarov Georgy Editor</p>
+            <form class="ajax-form" novalidate>
+              <input type="hidden" name="action" value="callback">
+              <button class="btn btn-outline-secondary btn-sm">Выйти</button>
+            </form>
+          </div>
+        </div>
+        <div class="panel panel-header">
+          <div class="row mb-1 mb-sm-3 mb-xl-2 align-items-top align-items-md-center">
+            <div class="col-12 col-sm-6 col-md-4 order-2 order-md-1">
+              <label>Лицевой счет</label>
+              <h1>5678291943</h1>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 order-3 order-md-2">
+              <label>Состояние взаиморасчетов</label>
+              <div class="row align-items-center">
+                <div class="d-inline-block m-0">К оплате</div>
+                <h1 class="m-0 ml-2">71577,05 ₽</h1>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 order-1 order-md-3 mb-3 mb-md-0 text-right"><a class="btn btn-primary" href="lk-platezh-id.html">Внести аванс</a></div>
+          </div>
+          <div class="row mb-1 mb-sm-3 mb-xl-2">
+            <div class="col-6 col-lg-6">
+              <label class="d-none d-sm-inline-block">Адрес</label>
+              <p class="m-0 mobile-gray">Деревня Черная, ул.Красная, д.11, стр.4, парадная 2</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-tabs">
+          <div class="d-flex nav-pills-container scroll-x">
+            <div class="nav nav-pills" role="tablist"><a class="nav-link" href="lk-nachisleniya.html">
+                <svg class="nav-link-icon">
+                  <use xlink:href="assets/image/sprite.svg#info"></use>
+                </svg>Начисления</a><a class="nav-link" href="lk-platezhi.html">
+                <svg class="nav-link-icon">
+                  <use xlink:href="assets/image/sprite.svg#info"></use>
+                </svg>Платежи</a><a class="nav-link" href="lk-schetchiki.html">
+                <svg class="nav-link-icon">
+                  <use xlink:href="assets/image/sprite.svg#plus"></use>
+                </svg>Показания счетчиков</a><a class="nav-link" href="lk-zayavki.html">
+                <svg class="nav-link-icon">
+                  <use xlink:href="assets/image/sprite.svg#clock"></use>
+                </svg>Заявки</a><a class="nav-link active" href="lk-cards.html">
+                <svg class="nav-link-icon">
+                  <use xlink:href="assets/image/sprite.svg#info"></use>
+                </svg>Карты и автоплатежи</a>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content px-0">
+          <div class="tab-pane fade show active" role="tabpanel">
+            <div class="tab-pane fade show active" role="tabpanel">
+              <div class="panel panel-maininfo">
+                <div class="d-flex">
+                  <div class="panel-content">
+                    <table class="table-simple">
+                      <thead>
+                        <tr>
+                          <th colspan="2">Спиосок платежных карт</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Сбербанк</td>
+                          <td>**** **** **** 5544</td>
+                        </tr>
+                        <tr>
+                          <td>Тинькофф</td>
+                          <td>**** **** **** 2354</td>
+                        </tr>
+                        <tr>
+                          <td>Сбербанк</td>
+                          <td>**** **** **** 5544</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <button class="btn btn-outline-primary">Новая карта</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="infoModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

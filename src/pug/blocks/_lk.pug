@@ -1,0 +1,41 @@
+extends _layout
+block variables
+block title
+    title Личный кабинет
+block content
+
+    .content
+
+        .d-flex.flex-wrap.w-100.mb-3
+            .col-12.col-sm-6.p-0.order-2.order-sm-1
+                a.btn.btn-outline-secondary.btn-sm(href="#") Назад
+            .col-12.col-sm-6.p-0.order-1.order-sm-2.mb-3.mb-sm-0.d-flex.justify-content-end.align-items-center
+                p.paragraph.mr-3.mb-0 Sambarov Georgy Editor
+                form.ajax-form(novalidate)
+                    input(type='hidden' name='action' value='callback')
+                    button.btn.btn-outline-secondary.btn-sm Выйти
+
+        .panel.panel-header
+            .row.mb-1.mb-sm-3.mb-xl-2.align-items-top.align-items-md-center
+                .col-12.col-sm-6.col-md-4.order-2.order-md-1
+                    label Лицевой счет
+                    h1 5678291943
+                .col-12.col-sm-6.col-md-4.order-3.order-md-2
+                    label Состояние взаиморасчетов
+                    .row.align-items-center
+                        .d-inline-block.m-0 К оплате
+                        h1.m-0.ml-2 71577,05 ₽
+                .col-12.col-md-4.order-1.order-md-3.mb-3.mb-md-0.text-right
+                    a.btn.btn-primary(href='lk-platezh-id.html') Внести аванс
+            .row.mb-1.mb-sm-3.mb-xl-2
+                .col-6.col-lg-6
+                    label.d-none.d-sm-inline-block Адрес
+                    p.m-0.mobile-gray Деревня Черная, ул.Красная, д.11, стр.4, парадная 2
+
+        .panel.panel-tabs
+            .d-flex.nav-pills-container.scroll-x
+                +menu-lk(curLink)
+
+        .tab-content.px-0
+            .tab-pane.fade.show.active(role='tabpanel')
+                block lk-content

@@ -1,0 +1,22 @@
+<td class="p-0">
+    <div class="d-flex flex-wrap pt-3 pb-3 align-items-top align-items-lg-center">
+        <div class="col-5 col-sm-12 col-md-3 col-lg-2 mb-sm-2 mb-md-0">
+            <div class="paragraph color-blue">{{ month }}</div>
+        </div>
+        <div class="col-7 col-sm-4 col-md-3 col-lg-2">
+            <div class="label">Оплачено</div>
+            <div class="paragraph">{{ bill }} ₽</div>
+        </div>
+        <div class="col-7 col-sm-4 col-md-3 col-lg-3 offset-5 offset-sm-0 mt-2 mt-sm-0">
+            {{#if isDebt}}
+                <div class="label">Долг на конец периода</div><div class="paragraph" style="color: #DF1E42">{{ credit }} ₽</div>
+            {{else}}
+                <div class="label">Переплата на конец периода</div><div class="paragraph" style="color: green">{{ credit }} ₽</div>
+            {{/if}}
+        </div>
+        <div class="col-7 col-sm-4 col-md-3 col-lg-2 offset-5 offset-sm-0 mt-2 mt-sm-0">
+            <div class="label">К оплате</div>
+            <div class="paragraph">{{ toPay }} ₽</div>
+        </div>
+    </div>
+</td>

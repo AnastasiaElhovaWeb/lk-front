@@ -1,0 +1,720 @@
+
+.form-group {
+  margin: 0;
+  position: relative;
+
+  ~ .form-group {
+    margin-top: 1rem;
+  }
+
+  &.required {
+    label:first-child:after {
+      content: "*";
+      color: $red;
+      margin-left: 2px;
+    }
+  }
+}
+
+
+
+.form-control {
+  background-color: $white;
+  border: 2px solid $blue-light;
+  border-radius: 6px;
+  font-family: Montserrat-Medium, serif;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.71;
+  color: $gray;
+  height: calc(1rem + 1.1rem + 1.43rem + 2px);
+  padding: 0.9rem 1.43rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+    background-color: $white;
+    color: $gray;
+    border-color: $blue-light;
+  }
+
+  &[type='search'] {
+    padding-left: 3rem;
+  }
+
+  &[type='checkbox'] {
+    display: none;
+
+    & ~ label {
+
+      position: relative;
+      padding-left: 25px;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -9px;
+        width: 18px;
+        height: 18px;
+        background-color: $white;
+        border: 2px solid #BFCDDB;
+        border-radius: 4px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        &:before {
+          background-color: $background-light-extra;
+        }
+      }
+    }
+
+    &:checked ~ label:before {
+      background: url("../image/checkbox.png") center no-repeat;
+      border-color: $blue;
+    }
+  }
+
+  &-with-btn {
+    padding-right: 4rem;
+  }
+  
+  &.disabled, &:disabled {
+    background-color: $background-light;
+    border-color: $background-light;
+    color: $gray-light;
+    pointer-events: none;
+  }
+
+  &-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+    & + label {
+      display: block;
+      max-width: 145px;
+      background-color: $white;
+      border: 2px solid $blue-light;
+      color: $gray;
+      padding: .6rem 1.6rem .7rem;
+      border-radius: 6px;
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      margin-bottom: 0 !important;
+    }
+  }
+
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.form-control-select {
+  option[disabled] {
+    display: none;
+  }
+}
+
+.form-control-select ~ .select2-container {
+
+  width: auto !important;
+  max-width: 100%;
+  min-width: 180px;
+
+  .select2-selection {
+    background-color: $white;
+    border: 2px solid $blue-light;
+    border-radius: 6px;
+    font-family: Montserrat-Medium, serif;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.71;
+    color: $gray;
+    height: calc(1rem + 1.1rem + 1.43rem + 2px);
+    padding: 0.9rem 1.43rem;
+    outline: none;
+    box-shadow: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  }
+
+  &:hover {
+    .select2-selection {
+      border-color: $blue-light;
+      cursor: pointer;
+    }
+  }
+
+  &.select2-container--disabled {
+    .select2-selection {
+      background-color: $background-light;
+      border-color: $background-light;
+      color: $gray-light;
+      pointer-events: none;
+    }
+  }
+}
+
+
+.select2-dropdown-class {
+
+  border: 2px solid $blue-light !important;
+  border-top: none !important;
+  border-radius: 6px;
+  box-shadow: 0 10px 12px rgba(0,0,0,0.175) !important;
+  margin-top: -2px !important;
+
+  .select2-results__options {
+
+    margin: 0;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
+  .select2-results__option {
+    white-space: normal;
+    line-height: 1.7;
+    padding: 7px 19px;
+    color: $gray !important;
+    cursor: pointer;
+
+    &.select2-results__option--highlighted {
+      background-color: $background-light;
+    }
+
+    &:hover {
+      background-color: $background-light;
+    }
+
+    &[aria-disabled=true] {
+      background-color: inherit;
+      color: $gray-light !important;
+      display: none;
+
+      &:hover {
+        background-color: inherit;
+        cursor: inherit;
+      }
+    }
+  }
+
+
+  .select2-search--dropdown {
+    margin: 0 0 10px;
+    padding: 0 17px;
+  }
+
+}
+
+
+// Календарь
+.datepicker {
+  &--cell.-selected-, &--cell.-selected-.-focus- {
+    background: $blue;
+  }
+  &--cell.-current- {
+    color: $blue;
+    font-weight: bolder;
+  }
+
+  &-inline {
+    position: absolute;
+    z-index: 2000;
+    margin-top: 3px;
+    display: none;
+  }
+}
+
+
+
+// Валидация
+
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+  border-color: $red;
+  box-shadow: none;
+}
+
+.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+  border-color: $blue-light;
+  box-shadow: none;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid,
+.form-control.is-valid ~ .nice-select, .was-validated .form-control:valid ~ .nice-select {
+  border-color: $blue-light;
+  background-image: none;
+}
+
+.form-control.changed.is-valid, .was-validated .form-control.changed:valid,
+.form-control.changed.is-valid ~ .nice-select, .was-validated .form-control.changed:valid ~ .nice-select {
+  border-color: $blue-light;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid,
+.form-control.is-invalid ~ .nice-select, .was-validated .form-control:invalid ~ .nice-select,
+.form-control.is-invalid ~ .select2-container .select2-selection, .was-validated .form-control:invalid ~ .select2-container .select2-selection {
+  border-color: $red;
+  background-image: none;
+}
+
+
+// Вкладки
+
+.tab-content {
+  flex-basis: 100%;
+  background-color: $white;
+  border-radius: 6px;
+  align-self: stretch;
+}
+
+@media (max-width: $tablet) {
+  .nav-pills {
+
+    position: absolute;
+    flex-wrap: nowrap;
+
+    &-container {
+      position: relative;
+      height: 55px;
+      overflow-x: scroll;
+    }
+  }
+}
+
+
+.nav-link {
+
+  font-family: Montserrat-Regular;
+  font-weight: 600;
+  padding: 1.04rem 1.14rem 1.14rem 3.14rem;
+  font-size: 1rem;
+  color: $gray-light;
+  background-color: $white;
+  position: relative;
+
+  svg {
+    stroke: $gray-light;
+    fill: $white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &-icon {
+    width: 1.20rem;
+    height: 1.20rem;
+    position: absolute;
+    left: 1.14rem;
+    top: 50%;
+    margin-top: -0.7rem;
+  }
+
+  &:hover {
+    color: $blue;
+    svg {
+      stroke: $blue;
+      fill: $white;
+    }
+  }
+
+  &.active {
+    color: $blue !important;
+    background-color: $white !important;
+
+    svg {
+      stroke: $blue;
+      fill: $white;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      right: 1rem;
+      height: 2px;
+      background-color: $blue;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    flex: none;
+  }
+}
+
+
+// Плашки
+.panel {
+  background-color: $white;
+  border-radius: 6px;
+  padding: $indent-large $indent-large $indent-gigant-extra;
+  align-self: stretch;
+
+  @media (max-width: $mobile) {
+    margin: 0 -20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 0;
+
+    &-container {
+
+      margin-left: -20px;
+      margin-right: -20px;
+
+      .panel {
+        margin: 0 auto;
+      }
+    }
+  }
+
+
+  &.panel-thin {
+    padding: $indent-middle $indent-large $indent-large;
+  }
+
+  &-maininfo {
+    padding: 0 !important;
+  }
+
+
+  &-header {
+    padding: $indent-middle $indent-large;
+    margin-bottom: $indent-large-extra;
+
+    @media (max-width: $mobile) {
+      margin-bottom: $indent-normal;
+    }
+  }
+
+
+  &-tabs {
+    padding: 0 $indent-large;
+    margin-bottom: $indent-normal;
+
+    @media (max-width: $mobile) {
+      margin-bottom: 10px;
+    }
+  }
+
+
+  &-info {
+    width: 280px;
+    border-right: 1px solid $blue-light;
+
+    @media (max-width: $desktop-wide) {
+      width: 100%;
+      display: flex;
+      border-right: none;
+      border-bottom: 1px solid $blue-light;
+    }
+
+    @media (max-width: $mobile) {
+      display: block;
+      border-bottom: none;
+    }
+  }
+
+
+  &-info-item {
+    padding: $indent-large;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: $desktop-wide) {
+      flex-basis: 100%;
+    }
+
+    @media (max-width: $mobile) {
+      border-bottom: 1px solid $blue-light;
+      padding: $indent-middle 20px;
+    }
+  }
+
+
+  &-info-item ~ &-info-item {
+    border-top: 1px solid $blue-light;
+
+    @media (max-width: $desktop-wide) {
+      border-top: none;
+      border-left: 1px solid $blue-light;
+    }
+
+    @media (max-width: $mobile) {
+      border-left: none;
+    }
+  }
+
+
+  &-content {
+    flex: 1;
+    padding: $indent-large;
+
+    @media (max-width: $mobile) {
+      padding: $indent-middle 20px;
+    }
+
+    &-list {
+      border-top: 1px solid $blue-light;
+      margin-top: $indent-normal;
+      margin-bottom: $indent-large-extra;
+
+      @media (max-width: $mobile) {
+        margin-bottom: $indent-large;
+        border-top: none;
+      }
+    }
+
+    &-item {
+      padding-top: $indent-small;
+      padding-bottom: $indent-small;
+      border-bottom: 1px solid $blue-light;
+
+      .paragraph {
+        @media (max-width: $mobile) {
+          font-size: 0.86rem;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        border-bottom: none;
+        padding: 0;
+        margin-bottom: 1rem;
+      }
+    }
+
+
+  }
+
+
+  &-modal {
+    padding-top: $indent-large;
+    padding-bottom: $indent-large-extra;
+    position: relative;
+
+    & ~ .panel-modal {
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 1px;
+        background-color: $blue-light;
+        top: 0;
+        right: - $indent-large-extra;
+        left: - $indent-large-extra;
+      }
+    }
+
+    &.modal-header {
+      display: block;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 1px;
+        background-color: $blue-light;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      padding-top: $indent-normal;
+      padding-bottom: $indent-middle;
+    }
+
+  }
+}
+
+.panel-info ~ .panel-content {
+  padding: $indent-large $indent-large-extra;
+
+  @media (max-width: $desktop-wide) {
+    padding: $indent-large-extra $indent-large $indent-large;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $indent-middle 20px;
+  }
+}
+
+
+@media (min-width: $tablet) {
+  .panel-tabs-list .panel-tabs {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: $tablet) {
+  .panel-tabs-list .panel-tabs:first-child {
+    padding-top: $indent-small;
+    padding-bottom: $indent-small;
+    margin-bottom: 1px;
+  }
+}
+
+
+// Стили для скролла вертикального
+.scroll {
+  overflow-y: scroll;
+  margin-right: -5px;
+  padding-right: 5px;
+
+  &::-webkit-scrollbar { /* 1 - скроллбар */
+    width: 3px;
+    height: 3px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-button { /* 2 - кнопка */
+
+  }
+
+  &::-webkit-scrollbar-track { /* 3 - трек */
+  }
+
+  &::-webkit-scrollbar-track-piece { /* 4 - видимая часть трека */
+  }
+
+  &::-webkit-scrollbar-thumb { /* 5 - ползунок */
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-corner { /* 6 - уголок */
+  }
+
+  &::-webkit-resizer { /* 7 - изменение размеров */
+  }
+
+}
+
+// Стили для скролла горизонтального
+.scroll-x {
+  margin-right: -5px;
+  padding-right: 5px;
+
+  &::-webkit-scrollbar { /* 1 - скроллбар */
+    width: 3px;
+    height: 3px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-button { /* 2 - кнопка */
+
+  }
+
+  &::-webkit-scrollbar-track { /* 3 - трек */
+  }
+
+  &::-webkit-scrollbar-track-piece { /* 4 - видимая часть трека */
+  }
+
+  &::-webkit-scrollbar-thumb { /* 5 - ползунок */
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-corner { /* 6 - уголок */
+  }
+
+  &::-webkit-resizer { /* 7 - изменение размеров */
+  }
+
+}
+
+
+// Лейблы : сформирована/не сфомирована
+.marker {
+  font-family: Montserrat-Medium, serif;
+  font-weight: normal;
+  font-size: 0.86rem;
+  color: $blue;
+  background-color: #DFE9F4;
+  border-radius: 1.21rem;
+  padding: 0.60rem 1.14rem 0.76rem;
+}
+
+.mobile-gray {
+  @media (max-width: $mobile) {
+    font-size: 0.86rem;
+    line-height: 1.50;
+    letter-spacing: 0.015em;
+    color: $gray-light;
+  }
+}
+
+.see-password {
+  position: absolute;
+  right: 10px;
+  top: 2rem;
+  height: calc(1rem + 1.1rem + 1.43rem + 2px);
+  width: 50px;
+  background: url("../image/eye.png") center no-repeat;
+  background-size: 20px 20px;
+  &.open {
+    background: url("../image/eye-closed.png") center no-repeat;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+@media (max-width: $desktop-wide) {
+  .w-xl-100 {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: $desktop-large) {
+  .d-xxl-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: $desktop-xlarge) {
+  .col-xxl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+@media (max-width: $mobile) {
+  .w-m-auto {
+    width: auto !important;
+  }
+}
+
+@media (min-width: $tablet) {
+  .w-md-100 {
+    width: 100% !important;
+  }
+}

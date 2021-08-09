@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/image/favicon.ico">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex p-xl-0 flex-wrap container-main">
+      <div class="content">
+        <div class="d-flex flex-wrap w-100 mb-3">
+          <div class="col-12 col-sm-6 p-0 order-2 order-sm-1"><a class="btn btn-outline-secondary btn-sm" href="#">Назад</a></div>
+          <div class="col-12 col-sm-6 p-0 order-1 order-sm-2 mb-3 mb-sm-0 d-flex justify-content-end align-items-center">
+            <p class="paragraph mr-3 mb-0">Sambarov Georgy Editor</p>
+            <form class="ajax-form" novalidate>
+              <input type="hidden" name="action" value="callback">
+              <button class="btn btn-outline-secondary btn-sm">Выйти</button>
+            </form>
+          </div>
+        </div>
+        <div class="panel panel-header">
+          <div class="row mb-2 align-items-center">
+            <div class="col-12 col-md-6 order-2 order-md-1">
+              <label>Холодное водоснабжение</label>
+              <h1>№ 566678291943545</h1>
+            </div>
+            <div class="col-12 col-md-6 order-1 order-md-2 text-right"><a class="m-0 mobile-gray" href="lk-schetchik-history.html">История</a></div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-6 col-lg-3">
+              <label>Срок плановой поверки</label>
+              <p class="m-0 mobile-gray" style="color: #E61947">01.09.2019 истёк срок замены или выполнения поверки этого счетчика!</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5"></div>
+          </div>
+        </div>
+        <div class="panel panel-content">
+          <div class="row col-12 col-md-6">
+            <table class="table-simple w-100">
+              <thead>
+                <tr>
+                  <th colspan="2">Предыдущие показания</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>от 27.05.2021</td>
+                  <td>63.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <form class="ajax-form row col-12 col-md-6" novalidate>
+            <input type="hidden" name="action" value="callback">
+            <div class="mt-4 form-group w-100">
+              <label class="mb-2">Текущие показания</label>
+              <input class="form-control" data-input-type type="text" name="schetchik" required>
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mt-4 form-group w-100">
+              <button class="btn btn-primary">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal fade" id="infoModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

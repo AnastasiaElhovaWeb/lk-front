@@ -1,0 +1,15 @@
+<td class="p-0" style="border: none !important;">
+    <table class="w-100">
+        <tr>
+            <td width="33%" rowspan="{{ get_length schetchiki }}" class="p-0 pr-2 pl-2">{{ data }}</td>
+            <td width="33%" class="d-none"></td>
+            <td width="34%" class="d-none"></td>
+        </tr>
+        {{#each schetchiki}}
+            <tr>
+                <td width="33%" >{{ name }}</td>
+                <td width="34%" > {{ value }}</td>
+            </tr>
+        {{/each}}
+    </table>
+</td>

@@ -1,0 +1,28 @@
+extends blocks/_lk
+block variables
+    -
+        curLink = "lk-cards.html";
+block lk-content
+    .tab-pane.fade.show.active(role='tabpanel')
+        .panel.panel-maininfo
+            .d-flex
+                .panel-content
+
+                    table.table-simple
+                        thead
+                            tr
+                                th(colspan=2) Спиосок платежных карт
+                        tbody
+                            tr
+                                td Сбербанк
+                                td **** **** **** 5544
+                            tr
+                                td Тинькофф
+                                td **** **** **** 2354
+                            tr
+                                td Сбербанк
+                                td **** **** **** 5544
+
+                    .row.mt-3
+                        .col-12
+                            button.btn.btn-outline-primary Новая карта

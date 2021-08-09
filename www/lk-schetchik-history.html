@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/image/favicon.ico">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex p-xl-0 flex-wrap container-main">
+      <div class="content">
+        <div class="d-flex flex-wrap w-100 mb-3">
+          <div class="col-12 col-sm-6 p-0 order-2 order-sm-1"><a class="btn btn-outline-secondary btn-sm" href="#">Назад</a></div>
+          <div class="col-12 col-sm-6 p-0 order-1 order-sm-2 mb-3 mb-sm-0 d-flex justify-content-end align-items-center">
+            <p class="paragraph mr-3 mb-0">Sambarov Georgy Editor</p>
+            <form class="ajax-form" novalidate>
+              <input type="hidden" name="action" value="callback">
+              <button class="btn btn-outline-secondary btn-sm">Выйти</button>
+            </form>
+          </div>
+        </div>
+        <div class="panel panel-header">
+          <div class="row mb-2 align-items-center">
+            <div class="col-12 col-md-6 order-2 order-md-1">
+              <label>Электричество</label>
+              <h1>№ 566678291943</h1>
+            </div>
+            <div class="col-12 col-md-6 order-1 order-md-2 text-right"></div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-6 col-lg-3">
+              <label>Срок плановой поверки</label>
+              <p class="m-0 mobile-gray">29.08.2029</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5"></div>
+          </div>
+        </div>
+        <div class="panel panel-content">
+          <form class="row mb-4" data-form-type="history">
+            <div class="col-12 col-sm-5 col-md-3 d-flex align-items-center justify-content-end mb-3 mb-sm-0">
+              <label class="d-inline-block" style="margin-right: 5px">с</label>
+              <input class="form-control input-date" type="text" name="data-begin" placeholder="Дата" autocomplete="off">
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-3 d-flex align-items-center justify-content-end">
+              <label class="d-inline-block" style="margin-right: 5px">по</label>
+              <input class="form-control input-date" type="text" name="data-end" placeholder="Дата" autocomplete="off">
+              <div class="invalid-feedback"></div>
+            </div>
+            <input type="hidden" name="action" value="history">
+          </form>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <table class="table-simple table-simple--wide" data-table-type="history"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="infoModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

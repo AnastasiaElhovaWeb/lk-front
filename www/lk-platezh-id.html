@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/image/favicon.ico">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex p-xl-0 flex-wrap container-main">
+      <div class="content">
+        <div class="d-flex flex-wrap w-100 mb-3">
+          <div class="col-12 col-sm-6 p-0 order-2 order-sm-1"><a class="btn btn-outline-secondary btn-sm" href="#">Назад</a></div>
+          <div class="col-12 col-sm-6 p-0 order-1 order-sm-2 mb-3 mb-sm-0 d-flex justify-content-end align-items-center">
+            <p class="paragraph mr-3 mb-0">Sambarov Georgy Editor</p>
+            <form class="ajax-form" novalidate>
+              <input type="hidden" name="action" value="callback">
+              <button class="btn btn-outline-secondary btn-sm">Выйти</button>
+            </form>
+          </div>
+        </div>
+        <div class="panel panel-header">
+          <div class="row mb-2 align-items-center">
+            <div class="col-12 col-md-6 order-2 order-md-1">
+              <h1>Новый платеж за услуги ЖКХ</h1>
+            </div>
+            <div class="col-12 col-md-6 order-1 order-md-2 text-right"></div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-6 col-lg-3">
+              <label>Лицевой счет</label>
+              <p class="m-0 mobile-gray">5678291943</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5">
+              <label>Адрес</label>
+              <p class="m-0 mobile-gray">Деревня Черная, ул.Красная, д.11, стр.4, парадная 2</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-content">
+          <form class="ajax-form row col-12 col-md-6" novalidate>
+            <input type="hidden" name="action" value="callback">
+            <div class="mt-4 form-group w-100 required">
+              <label class="mb-2">Cумма оплаты</label>
+              <input class="form-control" data-input-type="sum" type="text" name="sum" required>
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mt-4 form-group w-100">
+              <label class="mb-2">Коммиссия (1.5%)</label>
+              <input class="form-control" data-input-type="rate" data-value="0.015" type="text" value="0" disabled name="rate">
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mt-4 form-group w-100">
+              <label class="mb-2">Общая сумма</label>
+              <input class="form-control" data-input-type="sumTotal" type="text" value="0" disabled name="sumTotal">
+              <div class="invalid-feedback"></div>
+            </div>
+            <div class="mt-4 form-group w-100">
+              <button class="btn btn-primary">Продолжить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal fade" id="infoModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

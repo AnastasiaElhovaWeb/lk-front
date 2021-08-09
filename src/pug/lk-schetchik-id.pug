@@ -1,0 +1,36 @@
+extends blocks/_lk-id
+block variables
+
+block panel-header
+    .row.mb-2.align-items-center
+        .col-12.col-md-6.order-2.order-md-1
+            label Холодное водоснабжение
+            h1 № 566678291943545
+        .col-12.col-md-6.order-1.order-md-2.text-right
+            a.m-0.mobile-gray(href='lk-schetchik-history.html') История
+    .row.mb-2
+        .col-12.col-md-6.col-lg-3
+            label Срок плановой поверки
+            p.m-0.mobile-gray(style='color: #E61947') 01.09.2019 истёк срок замены или выполнения поверки этого счетчика!
+        .col-12.col-md-6.col-lg-5
+
+block panel-content
+
+    .row.col-12.col-md-6
+        table.table-simple.w-100
+            thead
+                tr
+                    th(colspan=2) Предыдущие показания
+            tbody
+                tr
+                    td от 27.05.2021
+                    td 63.9
+
+    form.ajax-form.row.col-12.col-md-6(novalidate)
+        input(type='hidden' name='action' value='callback')
+        .mt-4.form-group.w-100
+            label.mb-2 Текущие показания
+            input.form-control(data-input-type type='text' name='schetchik' required)
+            .invalid-feedback
+        .mt-4.form-group.w-100
+            button.btn.btn-primary Отправить

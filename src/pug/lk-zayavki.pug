@@ -1,0 +1,17 @@
+extends blocks/_lk
+block variables
+    -
+        curLink = "lk-zayavki.html";
+block lk-content
+    .tab-pane.fade.show.active(role='tabpanel')
+        .panel.panel-maininfo
+            .d-flex
+                .panel-content
+                    .row
+                        .col-12.mb-3
+                            a.btn.btn-primary(href='lk-zayavka-new.html') Подать заявку
+
+                    form(data-form-type='zayavki')
+                        input(type='hidden' name='action' value='zayavki')
+
+                    table.table-simple.table-simple--wide(data-table-type='zayavki')

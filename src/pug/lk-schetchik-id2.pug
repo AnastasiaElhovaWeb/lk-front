@@ -1,0 +1,51 @@
+extends blocks/_lk-id
+block variables
+
+block panel-header
+    .row.mb-2.align-items-center
+        .col-12.col-md-6.order-2.order-md-1
+            label Электричество
+            h1 № 566678291943
+        .col-12.col-md-6.order-1.order-md-2.text-right
+            a.m-0.mobile-gray(href='lk-schetchik-history.html') История
+    .row.mb-2
+        .col-12.col-md-6.col-lg-3
+            label Срок плановой поверки
+            p.m-0.mobile-gray 29.08.2029
+        .col-12.col-md-6.col-lg-5
+
+block panel-content
+
+    .row.col-12.col-md-6
+        table.table-simple.w-100
+            thead
+                tr
+                    th(colspan=3) Предыдущие показания
+            tbody
+                tr
+                    td(rowspan=3) от 27.05.2021
+                    td T1 (утро)
+                    td 104.8744
+                tr
+                    td Т2 (День)
+                    td 206.5566
+                tr
+                    td Т3 (Вечер)
+                    td 303.8744
+
+    form.ajax-form.row.col-12.col-md-6(novalidate)
+        input(type='hidden' name='action' value='callback')
+        .mt-4.form-group.w-100
+            label.mb-2 T1 (утро)
+            input.form-control(data-input-type type='text' name='schetchik1' required)
+            .invalid-feedback
+        .mt-4.form-group.w-100
+            label.mb-2 Т2 (День)
+            input.form-control(data-input-type type='text' name='schetchik2' required)
+            .invalid-feedback
+        .mt-4.form-group.w-100
+            label.mb-2 Т3 (Вечер)
+            input.form-control(data-input-type type='text' name='schetchik3' required)
+            .invalid-feedback
+        .mt-4.form-group.w-100
+            button.btn.btn-primary Отправить

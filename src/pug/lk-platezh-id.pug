@@ -1,0 +1,36 @@
+extends blocks/_lk-id
+block variables
+
+block panel-header
+    .row.mb-2.align-items-center
+        .col-12.col-md-6.order-2.order-md-1
+            h1 Новый платеж за услуги ЖКХ
+        .col-12.col-md-6.order-1.order-md-2.text-right
+    .row.mb-2
+        .col-12.col-md-6.col-lg-3
+            label Лицевой счет
+            p.m-0.mobile-gray 5678291943
+        .col-12.col-md-6.col-lg-5
+            label Адрес
+            p.m-0.mobile-gray Деревня Черная, ул.Красная, д.11, стр.4, парадная 2
+
+block panel-content
+    form.ajax-form.row.col-12.col-md-6(novalidate)
+        input(type='hidden' name='action' value='callback')
+        .mt-4.form-group.w-100.required
+            label.mb-2 Cумма оплаты
+            input.form-control(data-input-type='sum' type='text' name='sum' required)
+            .invalid-feedback
+        .mt-4.form-group.w-100
+            label.mb-2 Коммиссия (1.5%)
+            input.form-control(data-input-type='rate' data-value='0.015' type='text' value='0' disabled name='rate')
+            .invalid-feedback
+        .mt-4.form-group.w-100
+            label.mb-2 Общая сумма
+            input.form-control(data-input-type='sumTotal' type='text' value='0' disabled name='sumTotal')
+            .invalid-feedback
+        .mt-4.form-group.w-100
+            button.btn.btn-primary Продолжить
+
+
+

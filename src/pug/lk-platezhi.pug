@@ -1,0 +1,21 @@
+extends blocks/_lk
+block variables
+    -
+        curLink = "lk-platezhi.html";
+block lk-content
+    .tab-pane.fade.show.active(role='tabpanel')
+        .panel.panel-maininfo
+            .d-flex
+                .panel-content
+                    form.row.mb-4(data-form-type='platezhi')
+                        input(type='hidden' name='action' value='platezhi')
+                        .col-12.col-sm-5.col-md-3.d-flex.align-items-center.justify-content-end.mb-3.mb-sm-0
+                            label.d-inline-block.mr-2 с
+                            input.form-control.input-date.d-inline-block(type="text" name='data-begin' placeholder='Дата' autocomplete='off')
+                        .col-12.col-sm-5.col-md-3.d-flex.align-items-center.justify-content-end
+                            label.d-inline-block.mr-2 по
+                            input.form-control.input-date(type="text" name='date-end' placeholder='Дата' autocomplete='off')
+
+                    .mt-2.mb-3 В т.ч. в обработке в банке: <strong>1998,55 ₽</strong>
+
+                    table.table-simple.table-simple--wide(data-table-type='platezhi')

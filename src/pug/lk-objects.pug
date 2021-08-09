@@ -1,0 +1,27 @@
+extends blocks/_layout
+block title
+    title Личный кабинет
+block content
+
+    .content
+
+        .d-flex.flex-wrap.w-100.mb-3
+            .col-12.col-sm-6.p-0.order-2.order-sm-1
+            .col-12.col-sm-6.p-0.order-1.order-sm-2.mb-3.mb-sm-0.d-flex.justify-content-end.align-items-center
+                p.paragraph.mr-3.mb-0 Sambarov Georgy Editor
+                form.ajax-form(novalidate)
+                    input(type='hidden' name='action' value='callback')
+                    button.btn.btn-outline-secondary.btn-sm Выйти
+
+        .panel.panel-maininfo
+            .d-flex
+                .panel-content
+
+                    .row.mb-1.mb-sm-3.mb-xl-2.align-items-top.align-items-md-center
+                        .col-12
+                            h1 Объекты недвижимости
+
+                    form.row.justify-content-end.mb-4(data-form-type='objects')
+                        input(type='hidden' name='action' value='objects')
+
+                    table.table-simple.table-simple--wide(data-table-type='objects')

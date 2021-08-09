@@ -1,0 +1,31 @@
+extends blocks/_lk-id
+block variables
+
+block panel-header
+    .row.mb-2.align-items-center
+        .col-12.col-md-6.order-2.order-md-1
+            label Электричество
+            h1 № 566678291943
+        .col-12.col-md-6.order-1.order-md-2.text-right
+    .row.mb-2
+        .col-12.col-md-6.col-lg-3
+            label Срок плановой поверки
+            p.m-0.mobile-gray 29.08.2029
+        .col-12.col-md-6.col-lg-5
+
+block panel-content
+
+    form.row.mb-4(data-form-type='history')
+        .col-12.col-sm-5.col-md-3.d-flex.align-items-center.justify-content-end.mb-3.mb-sm-0
+            label.d-inline-block(style='margin-right: 5px') с
+            input.form-control.input-date(type='text' name='data-begin' placeholder='Дата' autocomplete='off')
+            .invalid-feedback
+        .col-12.col-sm-5.col-md-3.d-flex.align-items-center.justify-content-end
+            label.d-inline-block(style='margin-right: 5px') по
+            input.form-control.input-date(type='text' name='data-end' placeholder='Дата' autocomplete='off')
+            .invalid-feedback
+        input(type='hidden' name='action' value='history')
+
+    .row
+        .col-12.col-md-6
+            table.table-simple.table-simple--wide(data-table-type='history')

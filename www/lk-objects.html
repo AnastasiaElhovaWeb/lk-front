@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/image/favicon.ico">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex p-xl-0 flex-wrap container-main">
+      <div class="content">
+        <div class="d-flex flex-wrap w-100 mb-3">
+          <div class="col-12 col-sm-6 p-0 order-2 order-sm-1"></div>
+          <div class="col-12 col-sm-6 p-0 order-1 order-sm-2 mb-3 mb-sm-0 d-flex justify-content-end align-items-center">
+            <p class="paragraph mr-3 mb-0">Sambarov Georgy Editor</p>
+            <form class="ajax-form" novalidate>
+              <input type="hidden" name="action" value="callback">
+              <button class="btn btn-outline-secondary btn-sm">Выйти</button>
+            </form>
+          </div>
+        </div>
+        <div class="panel panel-maininfo">
+          <div class="d-flex">
+            <div class="panel-content">
+              <div class="row mb-1 mb-sm-3 mb-xl-2 align-items-top align-items-md-center">
+                <div class="col-12">
+                  <h1>Объекты недвижимости</h1>
+                </div>
+              </div>
+              <form class="row justify-content-end mb-4" data-form-type="objects">
+                <input type="hidden" name="action" value="objects">
+              </form>
+              <table class="table-simple table-simple--wide" data-table-type="objects"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="infoModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

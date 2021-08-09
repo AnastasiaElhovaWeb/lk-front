@@ -1,0 +1,11 @@
+// BASE
+@import 'base/settings';
+
+// LIBS
+@import '../libs/datatables/datatables.min';
+@import '../libs/select2/select2-min';
+@import '../libs/datepicker/datepicker';
+
+//MODULE
+@import 'module/content/tables';
+@import 'module/content/content';

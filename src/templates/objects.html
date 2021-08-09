@@ -1,0 +1,48 @@
+
+<td class="p-0">
+    <div class="d-flex flex-wrap pt-3 pb-3 align-items-top align-items-lg-center">
+        <div class="col-8 col-md-5 col-lg-3">
+            <div class="label">Лицевой счет</div>
+            <div class="paragraph color-blue">{{ id }}</div>
+        </div>
+        <div class="col-8 col-md-5 col-lg-3 mt-2 mt-md-0">
+            <div class="label">Адрес</div>
+            <div class="paragraph">{{ adres }}</div>
+        </div>
+        <div class="col-4 col-md-2 col-lg-6 d-flex">
+            <div class="slider-toggle"></div>
+        </div>
+    </div>
+
+    <div class="slider-table m-0">
+        <div class="d-flex flex-wrap pt-3 pb-3 align-items-top align-items-lg-center">
+            <div class="col-6 col-md-4">
+                <div class="label">Собственники</div>
+                {{#each owners}}
+                    <div class="paragraph">{{ fio }}</div>
+                {{/each}}
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="label">Общая площадь</div>
+                <div class="paragraph">{{ square }}</div>
+            </div>
+            <div class="col-12 col-md-4 mt-2 mt-md-0">
+                <div class="label">Состояние взаиморасчетов</div>
+                {{#if isDebt}}
+                    <div class="paragraph">Долг {{ credit }} ₽</div>
+                {{else}}
+                    <div class="paragraph">Переплата {{ credit }} ₽</div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="d-flex flex-wrap pb-3 align-items-top align-items-lg-center">
+            <div class="col-12">
+                <a class="marker d-inline-block mt-2" href="{{ href-nachisleniya }}">Начисления</a>
+                <a class="marker d-inline-block mt-2" href="{{ href-platezhi }}">Платежи</a>
+                <a class="marker d-inline-block mt-2" href="{{ href-schetchiki }}">Показания счетчиков</a>
+                <a class="marker d-inline-block mt-2" href="{{ href-zayavki }}">Заявки</a>
+                <a class="marker d-inline-block mt-2" href="{{ href-cards }}">Настройки карт</a>
+            </div>
+        </div>
+    </div>
+</td>

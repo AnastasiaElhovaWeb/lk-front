@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/image/favicon.ico">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid d-flex p-xl-0 flex-wrap container-main">
+      <div class="content">
+        <div class="d-flex flex-wrap w-100 mb-3">
+          <div class="col-12 col-sm-6 p-0 order-2 order-sm-1"><a class="btn btn-outline-secondary btn-sm" href="#">Назад</a></div>
+          <div class="col-12 col-sm-6 p-0 order-1 order-sm-2 mb-3 mb-sm-0 d-flex justify-content-end align-items-center">
+            <p class="paragraph mr-3 mb-0">Sambarov Georgy Editor</p>
+            <form class="ajax-form" novalidate>
+              <input type="hidden" name="action" value="callback">
+              <button class="btn btn-outline-secondary btn-sm">Выйти</button>
+            </form>
+          </div>
+        </div>
+        <form class="ajax-form w-100" novalidate>
+          <input type="hidden" name="action" value="callback">
+          <div class="panel panel-header">
+            <div class="row mb-1 mb-sm-3 mb-xl-2">
+              <div class="col-12">
+                <h1 class="d-inline">Новая заявка</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 mb-3">
+                <div class="form-group required">
+                  <label class="mb-2">Вид заявки</label>
+                  <select class="form-control form-control-select" data-step="1" required="required" name="type">
+                    <option value="">Все</option>
+                    <option value="type-1">Авария</option>
+                    <option value="type-2">Муж на час</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mb-3">
+                <div class="form-group">
+                  <label class="mb-2">Категория</label>
+                  <select class="form-control form-control-select" data-step="2" name="category">
+                    <option value="" data-parent="">Все</option>
+                    <option value="Обвал крыши" data-parent="type-1" disabled>Обвал крыши</option>
+                    <option value="Перегорела лампочка" data-parent="type-1" disabled>Перегорела лампочка</option>
+                    <option value="Течет кран" data-parent="type-1" disabled>Течет кран</option>
+                    <option value="Трещина в стене" data-parent="type-1" disabled>Трещина в стене</option>
+                    <option value="Замена лампы" data-parent="type-2" disabled>Замена лампы</option>
+                    <option value="Установка кондиционера" data-parent="type-2" disabled>Установка кондиционера</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="col-12 mb-3">
+                <div class="form-group required">
+                  <label class="mb-2">Описание</label>
+                  <textarea class="form-control" rows="5" required="required" placeholder="Опишите проблему" name="problem"></textarea>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="col-12 mb-3 mb-sm-0">
+                <div class="form-group">
+                  <label class="mb-2">Фотографии</label>
+                  <input class="form-control form-control-file" id="file" type="file" name="file" multiple>
+                  <label for="file">Выбрать файл</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-content">
+            <h3 class="mb-3">Контактная информация</h3>
+            <div class="row">
+              <div class="col-12 col-sm-6 mb-3">
+                <div class="form-group required">
+                  <label class="mb-2">Имя</label>
+                  <input class="form-control disabled" value="Виктория" name="name">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mb-3">
+                <div class="form-group">
+                  <label class="mb-2">Фамилия</label>
+                  <input class="form-control disabled" name="surname">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-sm-6 mb-3">
+                <div class="form-group">
+                  <label class="mb-2">Отчество</label>
+                  <input class="form-control disabled" name="fathername">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mb-3">
+                <div class="form-group required">
+                  <label class="mb-2">Телефон</label>
+                  <input class="form-control disabled" value="+7 (962) 721-55-66" name="phone">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="form-group">
+                  <label class="mb-2">Примечание</label>
+                  <textarea class="form-control" rows="5" name="note"></textarea>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 mb-3">
+                <div class="form-group">
+                  <button class="btn btn-primary">Отправить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal fade" id="infoModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

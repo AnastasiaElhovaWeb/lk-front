@@ -1,0 +1,268 @@
+
+.table-application, .table-application.dataTable {
+
+  border-collapse: unset;
+  border-spacing: 0;
+  margin-bottom: $indent-large !important;
+
+  &-row {
+    width: 100%;
+  }
+
+  td.th {
+    padding: 0.5rem 1.14rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: $gray-light;
+    border-left: 1px solid #CDD6E0;
+    border-bottom: 1px solid #CDD6E0;
+    border-top: 1px solid #CDD6E0;
+    background-color: $background-light;
+  }
+
+  td.th:last-child {
+    border-right: 1px solid #CDD6E0;
+  }
+
+  td {
+    padding: 0.64rem 1.14rem;
+    border-left: 1px solid #E1E9F0;
+    border-bottom: 1px solid #E1E9F0;
+    background-color: $white;
+  }
+
+  tr td:last-child {
+    border-right: 1px solid #E1E9F0;
+  }
+
+  tr.even td {
+    td {
+      background-color: $background-light-extra;
+    }
+  }
+
+  td.table-application-maintd {
+    padding: 0 !important;
+    border: none !important;
+
+    input {
+      display: none;
+    }
+
+    tr:first-child td:first-child {
+      padding: 0.64rem 0.5rem;
+    }
+
+    &.checked {
+      td {
+        background-color: $background-light;
+      }
+      .marker {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  th.table-application-maintd {
+    tr:first-child td.th:first-child {
+      padding: 0.5rem;
+    }
+  }
+
+  th.table-application-maintd {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .alarm {
+    width: 12px;
+    height: 15px;
+    display: block;
+    margin: auto;
+  }
+
+}
+
+
+
+// Пагинация таблиц
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  justify-content: flex-start !important;
+}
+
+.page-link {
+  font-size: 1rem;
+  color: $gray;
+  font-weight: 600;
+  line-height: 1.43;
+  padding: 1.05rem 1.5rem;
+  border-color: $blue-light;
+
+  &:hover {
+    color: $gray;
+    background-color: $background-light;
+    border-color: $blue-light;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+
+  @media (max-width: $mobile) {
+    padding: 1.05rem 1rem;
+  }
+
+}
+
+.page-item.active .page-link {
+  background-color: $blue;
+  border-color: $blue;
+  color: $white;
+}
+
+.page-item:first-child .page-link {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.page-item.next .page-link {
+  font-family: $font-family-medium;
+}
+
+.dataTables_length {
+  text-align: right !important;
+}
+
+
+
+
+
+.d-xxl-none {
+  display: none;
+}
+
+.application-td-mobile {
+  border-right: 1px solid #E1E9F0;
+
+  .alarm {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: -9px;
+      display: block;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(230, 25, 71, 0.14);
+    }
+  }
+}
+
+.slider-toggle {
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  padding: 1.86rem;
+  background-color: $background-light;
+  border-radius: 6px;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    top: 50%;
+    margin-top: -10px;
+    background: url("../image/sprite.svg#arrow") center no-repeat;
+    background-size: cover;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.open {
+    background-color: $blue-light;
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+
+}
+
+.slider-table {
+  border-top: 1px solid $blue-light;
+  margin-left: -1.14rem;
+  margin-right: -1.14rem;
+  display: none;
+}
+
+@media (max-width: $desktop-large) {
+
+  .table-application, .table-application.dataTable {
+    border-top: 1px solid #CDD6E0;
+  }
+
+  .table-application-maintd {
+    display: none;
+  }
+
+  .d-xxl-none {
+    display: block;
+  }
+}
+
+
+@media (max-width: $mobile) {
+  .application-td-mobile {
+
+    .row-td-mobile {
+      flex-wrap: wrap;
+      position: relative;
+      padding-right: 1.5rem;
+    }
+
+    .slider-toggle {
+      position: absolute;
+      right: -1.15rem;
+      top: 0;
+      bottom: 0;
+      border-radius: 0;
+      padding: 1.86rem 1.3rem;
+    }
+
+    .wm-40 {
+      flex-basis: 40%;
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+
+    .wm-60 {
+      flex-basis: 60%;
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+
+  }
+
+  .input-date {
+    width: 200px;
+  }
+
+
+
+}
+
+
